@@ -100,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 50,
                 width: 300,
                 child: TextField(
+                  obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
 
