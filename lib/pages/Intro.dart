@@ -45,7 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Container(
 
-        color: Colors.green,
+        color: Color.fromRGBO(149, 218, 148, 1),
+        child: Center(
+          child: Container(
+            color: Color.fromRGBO(149, 218, 148, 100),
+            child: Image.asset("Assets/Images/img_1.png")
+          ),
+        ),
           
       ),
     );
