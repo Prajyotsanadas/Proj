@@ -38,12 +38,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Stack(
           children: [
             Positioned(
-              top: 100,
+              top: 67,
               left: 50,
               child: Text('Create a', style: TextStyle(fontSize: 30)),
             ),
             Positioned(
-              top: 136,
+              top: 100,
               left: 50,
               child: Text(
                 'TrashTrack',
@@ -51,22 +51,22 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Positioned(
-              top: 142,
+              top: 108,
               left: 250,
               child: Text('Account', style: TextStyle(fontSize: 30)),
             ),
             Positioned(
-              top: 190,
+              top: 160,
               left: 50,
               child: Text('Sign up to get started', style: TextStyle(fontSize: 15)),
             ),
             Positioned(
-              top: 230,
+              top: 200,
               left: 50,
               child: Text('Full Name:', style: TextStyle(fontSize: 15)),
             ),
             Positioned(
-              top: 250,
+              top: 220,
               left: 50,
               child: Container(
                 height: 42,
@@ -79,12 +79,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Positioned(
-              top: 300,
+              top: 270,
               left: 50,
               child: Text('Email:', style: TextStyle(fontSize: 15)),
             ),
             Positioned(
-              top: 320,
+              top: 290,
               left: 50,
               child: Container(
                 height: 42,
@@ -97,12 +97,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Positioned(
-              top: 370,
+              top: 340,
               left: 50,
               child: Text('Phone:', style: TextStyle(fontSize: 15)),
             ),
             Positioned(
-              top: 390,
+              top: 360,
               left: 50,
               child: Container(
                 height: 42,
@@ -115,12 +115,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Positioned(
-              top: 440,
+              top: 410,
               left: 50,
               child: Text('Gender:', style: TextStyle(fontSize: 15)),
             ),
             Positioned(
-              top: 460,
+              top: 430,
               left: 50,
               child: Row(
                 children: [
@@ -149,12 +149,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             Positioned(
-              top: 510,
+              top: 470,
               left: 50,
               child: Text('Password:', style: TextStyle(fontSize: 15)),
             ),
             Positioned(
-              top: 530,
+              top: 490,
               left: 50,
               child: Container(
                 height: 42,
@@ -169,12 +169,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             Positioned(
-              top: 580,
+              top: 540,
               left: 50,
               child: Text('Confirm Password:', style: TextStyle(fontSize: 15)),
             ),
             Positioned(
-              top: 600,
+              top: 560,
               left: 50,
               child: Container(
                 height: 42,
@@ -188,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Positioned(
-              top: 660,
+              top: 630,
               left: 50,
               child: InkWell(
                 onTap: (){
@@ -208,12 +208,12 @@ class _MyHomePageState extends State<MyHomePage> {
             )
             ),
             Positioned(
-              top: 730,
+              top: 710,
               left: 120,
               child: Text('Already have an account?', style: TextStyle(fontSize: 15)),
             ),
             Positioned(
-              top: 750,
+              top: 730,
               left: 180,
               child: Text('LOGIN', style: TextStyle(fontSize: 15, color: Color.fromRGBO(36, 139, 52, 100))),
             ),
