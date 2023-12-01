@@ -1,6 +1,9 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <application
-        android:label="trash_track"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nikisha.TrashTrack"> <!-- This line defines the package name -->
+
+
+<application
+        android:label="TrashTrack"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

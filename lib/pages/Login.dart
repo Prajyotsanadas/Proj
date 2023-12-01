@@ -144,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('New User?', style: TextStyle(fontSize: 15)),
             ),
             Positioned(
-              top: 690,
+              top: 700,
               left: 140,
               child: Text('Create an Account', style: TextStyle(fontSize: 15, color: Color.fromRGBO(36, 139, 52, 100))),
             ),
