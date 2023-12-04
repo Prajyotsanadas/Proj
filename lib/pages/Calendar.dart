@@ -136,7 +136,7 @@ class _CalendarGridState extends State<CalendarGrid> {
                               color: index == _selectedIndex
                                   ? Colors.white
                                   : index % 7 == 6
-                                  ? Colors.green
+                                  ? Colors.lightGreen.shade200
                                   : Colors.black,
                               fontSize: 17),
                         )),
