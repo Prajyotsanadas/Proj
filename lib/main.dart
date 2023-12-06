@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trash_track/pages/Profile.dart';
+import 'package:trash_track/pages/notification.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ProfilePage(),
+      home: NotificationsPage(),
     );
   }
 }

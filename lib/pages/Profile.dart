@@ -54,7 +54,7 @@ class _ProfilePageState extends State<ProfilePage> {
         boxShadow: [
           BoxShadow(
             offset: Offset(0, 5),
-            color: Colors.deepOrange.withOpacity(.2),
+            color: Colors.green.withOpacity(.6),
             spreadRadius: 2,
             blurRadius: 10,
           )
