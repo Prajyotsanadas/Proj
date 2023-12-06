@@ -178,7 +178,7 @@ class _CalendarGridState extends State<CalendarGrid> {
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.only(bottom: 20, top: 10),
                   child: Image.network(
-                    'https://i.pinimg.com/736x/ef/9d/91/ef9d91a0b322bd1e257e3973350971e3.jpg', height: 256, width: 200, // Replace with the direct link to your image
+                    'https://i.pinimg.com/736x/ef/9d/91/ef9d91a0b322bd1e257e3973350971e3.jpgs', height: 256, width: 200, // Replace with the direct link to your image
                     fit: BoxFit.contain,
                   ),
                 ),
