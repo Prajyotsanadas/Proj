@@ -1,5 +1,22 @@
-import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Calendar App',
+      theme: ThemeData(
+        primarySwatch: Colors.lightGreen,
+      ),
+      home: CalendarGrid(),
+    );
+  }
+}
 
 class CalendarGrid extends StatefulWidget {
   const CalendarGrid({Key? key}) : super(key: key);
@@ -9,7 +26,7 @@ class CalendarGrid extends StatefulWidget {
 }
 
 class _CalendarGridState extends State<CalendarGrid> {
-  final DateTime _selectedDate = DateTime.now();//
+  final DateTime _selectedDate = DateTime.now();
 
   int _selectedIndex = 0;
   late int indexOfFirstDayMonth;
@@ -30,7 +47,7 @@ class _CalendarGridState extends State<CalendarGrid> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.lightGreen,
         shadowColor: Colors.transparent,
         leading: const Icon(
           Icons.arrow_back,
@@ -69,40 +86,42 @@ class _CalendarGridState extends State<CalendarGrid> {
           SizedBox(
             height: 50,
             child: GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 7,
-                ),
-                itemCount: daysOfWeek.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    alignment: Alignment.center,
-                    child: Text(
-                      daysOfWeek[index],
-                      style: const TextStyle(
-                          fontSize: 15,
-                          color: Color(0xFFFD00F0F),
-                          fontWeight: FontWeight.bold),
-                    ),
-                  );
-                }),
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 7,
+              ),
+              itemCount: daysOfWeek.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    daysOfWeek[index],
+                    style: const TextStyle(
+                        fontSize: 15,
+                        color: Colors.lightGreen,
+                        fontWeight: FontWeight.bold),
+                  ),
+                );
+              },
+            ),
           ),
           Container(
             decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
+              color: Colors.white,
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  spreadRadius: 0.1,
+                  blurRadius: 7,
+                  offset: const Offset(0, 7.75),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.3),
-                    spreadRadius: 0.1,
-                    blurRadius: 7,
-                    offset: const Offset(0, 7.75),
-                  ),
-                ]),
+              ],
+            ),
             child: GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
@@ -122,24 +141,26 @@ class _CalendarGridState extends State<CalendarGrid> {
                     })
                         : null,
                     child: Container(
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: index == _selectedIndex
+                            ? Colors.lightGreen.shade200
+                            : Colors.transparent,
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: index < indexOfFirstDayMonth
+                          ? const Text("")
+                          : Text(
+                        '${index + 1 - indexOfFirstDayMonth}',
+                        style: TextStyle(
                             color: index == _selectedIndex
-                                ? Color(0xFFFD00F0F)
-                                : Colors.transparent,
-                            borderRadius: BorderRadius.circular(50)),
-                        child: index < indexOfFirstDayMonth
-                            ? const Text("")
-                            : Text(
-                          '${index + 1 - indexOfFirstDayMonth}',
-                          style: TextStyle(
-                              color: index == _selectedIndex
-                                  ? Colors.white
-                                  : index % 7 == 6
-                                  ? Colors.lightGreen.shade200
-                                  : Colors.black,
-                              fontSize: 17),
-                        )),
+                                ? Colors.white
+                                : index % 7 == 6
+                                ? Colors.lightGreen.shade200
+                                : Colors.black,
+                            fontSize: 17),
+                      ),
+                    ),
                   ),
                 );
               },
@@ -154,8 +175,8 @@ class _CalendarGridState extends State<CalendarGrid> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.only(bottom: 20, top: 10),
-                  child: Image.asset(
-                    'assets/images/calendar-icon.jpg',
+                  child: Image.network(
+                    'https://i.pinimg.com/736x/ef/9d/91/ef9d91a0b322bd1e257e3973350971e3.jpg', height: 256, width: 200, // Replace with the direct link to your image
                     fit: BoxFit.contain,
                   ),
                 ),
