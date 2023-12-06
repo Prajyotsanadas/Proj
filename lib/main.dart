@@ -2,11 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:trash_track/pages/Calendar.dart';
 import 'package:trash_track/pages/Login.dart';
 import 'package:trash_track/pages/notification.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
+// ...
 
-void main() {
+ void main() {
   runApp(const MyApp());
+
+  Firebase.initializeApp(
+options: DefaultFirebaseOptions.currentPlatform,
+);
 }
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
