@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Calendar App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.lightGreen,
       ),
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
 class CalendarGrid extends StatefulWidget {
   const CalendarGrid({Key? key}) : super(key: key);
