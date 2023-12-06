@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "432289508427",
+    "project_id": "lab1-b2d03",
+    "storage_bucket": "lab1-b2d03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432289508427:android:cb691021d76116b6b9b1ce",
+        "android_client_info": {
+          "package_name": "com.pcps.trash_track"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiYvEKvEpggxkRn6cq0uDBlAbONhYRTsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
