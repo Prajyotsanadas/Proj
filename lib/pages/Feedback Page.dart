@@ -23,9 +23,9 @@ class FeedbackPage extends StatefulWidget {
 }
 
 class _FeedbackPageState extends State<FeedbackPage> {
-  TextEditingController _nameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
   TextEditingController _feedbackController = TextEditingController();
-//
+
   void _showFeedbackDialog(String message) {
     showDialog(
       context: context,
@@ -49,6 +49,38 @@ class _FeedbackPageState extends State<FeedbackPage> {
     );
   }
 
+  void _showRequiredFieldsDialog() {
+    _showFeedbackDialog('All fields are required');
+  }
+
+  void _showInvalidEmailDialog() {
+    _showFeedbackDialog('Invalid email format');
+  }
+
+  bool _isEmailValid(String email) {
+    // Use a regular expression to check for a valid email format
+    final emailRegex =
+    RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$');
+    return emailRegex.hasMatch(email);
+  }
+
+  void _sendFeedback() {
+    String email = _emailController.text;
+    String feedback = _feedbackController.text;
+
+    if (email.isEmpty || feedback.isEmpty) {
+      _showRequiredFieldsDialog();
+    } else if (!_isEmailValid(email)) {
+      _showInvalidEmailDialog();
+    } else {
+      // Implement the send feedback functionality
+      print('Email: $email\nFeedback: $feedback');
+      // Add logic to send feedback
+
+      _showFeedbackDialog('Feedback sent');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +94,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
           children: [
             Text('Email:'),
             TextField(
-              controller: _nameController,
+              controller: _emailController,
               decoration: InputDecoration(
                 hintText: 'Enter your Email',
               ),
@@ -81,21 +113,13 @@ class _FeedbackPageState extends State<FeedbackPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                    // Implement the send feedback functionality
-                    String name = _nameController.text;
-                    String feedback = _feedbackController.text;
-                    print('Name: $name\nFeedback: $feedback');
-                    // Add logic to send feedback
-
-                    _showFeedbackDialog('Feedback sent');
-                  },
+                  onPressed: _sendFeedback,
                   child: Text('Send'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     // Implement the cancel functionality
-                    _nameController.clear();
+                    _emailController.clear();
                     _feedbackController.clear();
 
                     _showFeedbackDialog('Cancelled');
