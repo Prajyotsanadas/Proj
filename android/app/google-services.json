@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "300015726898",
-    "project_id": "trashtrack-10e0f",
-    "storage_bucket": "trashtrack-10e0f.appspot.com"
+    "project_number": "432289508427",
+    "project_id": "lab1-b2d03",
+    "storage_bucket": "lab1-b2d03.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:300015726898:android:3b7c5ed5b28d332a21a72b",
+        "mobilesdk_app_id": "1:432289508427:android:cb691021d76116b6b9b1ce",
         "android_client_info": {
           "package_name": "com.pcps.trash_track"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDTmAAXV6l1LzaYNf7oUOfYKCjccfIRC1E"
+          "current_key": "AIzaSyAiYvEKvEpggxkRn6cq0uDBlAbONhYRTsc"
         }
       ],
       "services": {
