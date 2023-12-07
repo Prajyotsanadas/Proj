@@ -61,7 +61,7 @@ class NotificationsPage extends StatelessWidget {
         shape: BoxShape.circle,
         color: Colors.green.shade300,
       ),
-      child: Icon(Icons.notifications,
+      child: Icon(Icons.restore_from_trash,
         size: 25,
         color: Colors.grey.shade800),
     );

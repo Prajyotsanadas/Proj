@@ -1,38 +1,34 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'Dashboard_Page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  //nikisha dona
-
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
+  State<LoginPage> createState() => _MyHomePageState();
+}
+class _MyHomePageState extends State<LoginPage> {
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+  void _login() async {
+    try {
+      await _auth.signInWithEmailAndPassword(
+        email: _usernameController.text,
+        password: _passwordController.text,
+      );
+      // Navigate to the next screen or perform other actions upon successful login
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => DashboardPage()), // Replace DashboardPage with the actual name of your dashboard page
+      );
+    } catch (e) {
+      print("Error during login: $e");
+      // Handle login errors (display a message, show a dialog, etc.)
+    }
   }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Positioned(
                 top: 300,
                 left: 50,
+
                 child: Text('Mobile Number / Email', style: TextStyle(fontSize: 15,),)),
 
             Positioned(
@@ -120,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: InkWell(
               onTap:()
               {
-
+                _login();
               },
               child: Container(
                 height: 50,
