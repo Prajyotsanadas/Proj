@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trash_track/pages/Dashboard_Page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:trash_track/pages/Login_Page.dart';
+import 'package:trash_track/pages/notification.dart';
 
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: DashboardPage(),
+      home: LoginPage(),
     );
   }
 }

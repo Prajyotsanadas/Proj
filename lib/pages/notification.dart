@@ -10,7 +10,6 @@ class NotificationsPage extends StatelessWidget {
       body: listView(),
     );
   }
-
   PreferredSizeWidget appBar() {
     return AppBar(
       title: Text('Notifications'),
